@@ -1,51 +1,60 @@
-# React + TypeScript + Vite
+# GitHub README Generator & Preview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and modern README Generator and editor with a live preview panel, built using React and TailwindCSS. This project includes resizable panels, syntax highlighting, and support for GitHub-flavored Markdown (GFM).
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Live Markdown Preview**: Write Markdown in the editor and see instant updates in the preview panel.
+- **Resizable Layout**: Adjust the size of the editor and preview panel using a resizable handle.
+- **Custom Styled Markdown**: Enhanced styling for headers, lists, tables, code blocks, and more.
+- **Syntax Highlighting**: Supports inline and block code formatting.
+- **Mobile Responsive**: Fully adaptable UI for seamless experience on different screen sizes.
+- **Toggleable Sections**: Select which sections to include in your document.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React**: Component-based UI development.
+- **Tailwind CSS**: Modern utility-first styling.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/prabhjot2001/README-Generator.git
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Install dependencies**:
+   ```sh
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Start the development server**:
+   ```sh
+   npm run dev
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. **Open in browser**:
+   Navigate to `http://localhost:5173` to use the editor.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Usage
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# README-Generator
+1. Write Markdown in the **Editor** panel.
+2. See the formatted output instantly in the **Preview** panel.
+3. Resize the panels for better viewing.
+4. Use checkboxes in the left sidebar to enable/disable different sections.
+
+## Screenshots
+![screen shot](https://github.com/prabhjot2001/README-Generator/blob/main/public/ss1.png)
+![screen shot](https://github.com/prabhjot2001/README-Generator/blob/main/public/ss3.png)
+
+## 🤝 Contributing
+Contributions are welcome! If you find a bug or have suggestions, feel free to open an issue or submit a pull request.
+
+## 📜 License
+This project is licensed under the [MIT License](LICENSE).
+
+## ✨ Acknowledgments
+- [Tailwind CSS](https://tailwindcss.com/) for styling.
+- [Lucide Icons](https://lucide.dev/) for beautiful icons.
+
+---
+Made with ❤️ by [Prabhjot](https://github.com/prabhjot2001)
+
