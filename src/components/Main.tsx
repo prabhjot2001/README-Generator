@@ -5,7 +5,6 @@ import {
 } from "@/components/ui/resizable";
 import { Switch } from "@/components/ui/switch";
 import { useEffect, useState } from "react";
-import "highlight.js/styles/github-dark.css";
 import {
   Bolt,
   Check,
@@ -157,7 +156,7 @@ const Main = () => {
                   }`}
                 >
                   {tab === "input" ? (
-                    <div className="w-1 h-1 rounded-full animate-ping bg-green-700" />
+                    <div className="w-1 h-1 rounded-full animate-ping bg-green-500" />
                   ) : (
                     ""
                   )}
@@ -205,7 +204,14 @@ const Main = () => {
           ) : (
             ""
           )}
-          {tab === "input" ? <Editor onGenerate={() => {}} /> : ""}
+          {tab === "input" ? (
+            <Editor
+              templateData={themeTemplates[themeTemplateId]}
+              setMarkdown={setMarkdown}
+            />
+          ) : (
+            ""
+          )}
         </ResizablePanel>
 
         <ResizableHandle withHandle />
@@ -218,7 +224,9 @@ const Main = () => {
                 <Eye className="w-5" />
                 <span className="font-semibold">Preview</span>
               </div>
-              <p className="text-sm text-muted-foreground">See live preview</p>
+              <p className="text-sm text-muted-foreground">
+                See live preview. Final output
+              </p>
             </div>
             <Button variant={"default"} onClick={downloadMarkdownFile}>
               {loading ? (

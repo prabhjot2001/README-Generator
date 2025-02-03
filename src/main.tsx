@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
 import { Bounce, ToastContainer } from "react-toastify";
+// import App from "./components/Index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -23,5 +24,6 @@ createRoot(document.getElementById("root")!).render(
         transition={Bounce}
       />
     </BrowserRouter>
+    {/* <App/> */}
   </StrictMode>
 );
