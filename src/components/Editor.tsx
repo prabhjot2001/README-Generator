@@ -1,16 +1,28 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 
-const Editor = ({ templateData, setMarkdown }) => {
+type PropsType = {
+  templateData: {
+    id: number;
+    name: string;
+    requiredFields: string[];
+    template: string;
+  };
+  setMarkdown: (value: string) => void;
+};
+
+const Editor = ({ templateData, setMarkdown }: PropsType) => {
   const { template, requiredFields } = templateData;
-  const [formData, setFormData] = useState({});
-  const [generatedTemplate, setGeneratedTemplate] = useState("");
+
+  // Define formData as an object with keys from requiredFields and string values
+  const [formData, setFormData] = useState<Record<string, string>>({});
+  const [generatedTemplate, setGeneratedTemplate] = useState<string>("");
 
   useEffect(() => {
-    // Initialize form data with empty values for required fields
+    // done: Initialize form data with empty values for required fields
     const initialData = requiredFields.reduce((acc, field) => {
       acc[field] = "";
       return acc;
-    }, {});
+    }, {} as Record<string, string>);
     setFormData(initialData);
   }, [templateData]);
 
@@ -26,9 +38,9 @@ const Editor = ({ templateData, setMarkdown }) => {
     });
     setGeneratedTemplate(updatedTemplate);
     setMarkdown(updatedTemplate);
-  }, [formData, template]);
+  }, [formData, template, requiredFields, setMarkdown]);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };

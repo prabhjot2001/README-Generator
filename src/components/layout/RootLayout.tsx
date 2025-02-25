@@ -12,7 +12,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     // </main>
     <main className="h-screen w-full flex flex-col">
       {/* Navbar with fixed height */}
-      <Navbar className="h-16 flex-shrink-0" />
+      <Navbar />
 
       {/* Children container takes full height minus navbar height */}
       <div className="flex-1 overflow-hidden">{children}</div>

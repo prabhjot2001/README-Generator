@@ -1,4 +1,8 @@
-export default function DownloadButton({ readmeContent }) {
+type PropsType = {
+ readmeContent : string;
+}
+
+export default function DownloadButton({ readmeContent } : PropsType) {
     const handleCopy = () => {
       navigator.clipboard.writeText(readmeContent);
       alert("Copied to clipboard!");

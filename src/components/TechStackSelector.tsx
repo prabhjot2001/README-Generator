@@ -9,11 +9,15 @@ const techOptions = [
   "Tailwind CSS",
 ];
 
-export default function TechStackSelector({ onChange }) {
-  const [selectedTech, setSelectedTech] = useState([]);
+type PropsType = {
+  onChange: (selectedTech: string[]) => void;
+};
 
-  const handleSelect = (tech) => {
-    let updatedTech;
+export default function TechStackSelector({ onChange }: PropsType) {
+  const [selectedTech, setSelectedTech] = useState<string[]>([]); 
+
+  const handleSelect = (tech: string) => {
+    let updatedTech: string[];
     if (selectedTech.includes(tech)) {
       updatedTech = selectedTech.filter((item) => item !== tech);
     } else {
@@ -30,7 +34,9 @@ export default function TechStackSelector({ onChange }) {
           key={tech}
           onClick={() => handleSelect(tech)}
           className={`px-3 py-1 rounded-lg text-sm ${
-            selectedTech.includes(tech) ? "bg-blue-500 text-white" : "bg-gray-200"
+            selectedTech.includes(tech)
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200"
           }`}
         >
           {tech}
